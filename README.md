@@ -236,16 +236,16 @@ The character controller is now complete in regard to input, so now we will focu
 1. On every transition you make, ensure you uncheck **Has Exit Time** check box in the Inspector for that transition.
 2. There are transitions to and from every state now, except between **SlideAnimation** and **IdleAnimation** where there is only a state change from sliding to idle. Click each arrow in the **Animator** editor and create conditions as specified in the table below.
 
-| **Idle**  ****  **Jump** | **Jump**  ****  **Idle** | **Run**  ****  **Jump** | **Jump**  ****  **Run** |
+| **Idle**  **-->**  **Jump** | **Jump**  **-->**  **Idle** | **Run**  **-->**  **Jump** | **Jump**  **-->**  **Run** |
 | --- | --- | --- | --- |
 | IsJumping = true | Speed Less 0.05 | IsJumping = true | IsJumping = false |
 | Speed Less 0.5 | IsJumping = false |   | Speed Greater 0 |
 |   | IsOnWall = false |   |   |
-| **Run**  ****  **Slide** | **Slide**  ****  **Run** | **Slide**  ****  **Jump** | **Jump**  ****  **Slide** |
+| **Run**  **-->**  **Slide** | **Slide**  **-->**  **Run** | **Slide**  **-->**  **Jump** | **Jump**  **-->**  **Slide** |
 | IsOnWall = true | IsOnWall = false | IsJumping = true | IsOnWall = true |
 |   | Speed Greater 0 | IsOnWall = false | IsJumping = false |
 |   |   |   |   |
-| **Slide**  ****  **Idle** |   |   |   |
+| **Slide**  **-->**  **Idle** |   |   |   |
 | IsOnWall = false |   |   |   |
 | Speed Less 0.05 |   |   |   |
 
