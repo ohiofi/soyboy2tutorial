@@ -132,12 +132,12 @@ else
 ```c#
 public bool IsWallToLeftOrRight()
 {
-   bool wallOnLeft = Physics2D.Raycast (new Vector2 (transform.position.x - width, transform.position.y), -Vector2.right, rayCastLengthCheck);
-   bool wallOnRight = Physics2D.Raycast (new Vector2 (transform.position.x + width, transform.position.y), Vector2.right, rayCastLengthCheck);
-   if (wallOnLeft || wallOnRight)
-      return true;
-   else
-      return false;
+	bool wallOnLeft = Physics2D.Raycast (new Vector2 (transform.position.x - width, transform.position.y), -Vector2.right, rayCastLengthCheck);
+	bool wallOnRight = Physics2D.Raycast (new Vector2 (transform.position.x + width, transform.position.y), Vector2.right, rayCastLengthCheck);
+	if (wallOnLeft || wallOnRight)
+		return true;
+	else
+		return false;
 }
 ```
 
