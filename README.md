@@ -188,9 +188,9 @@ public int GetWallDirection()
 	if (isWallLeft)
 		return -1;
 	else if(isWallRight)
-		return 1;
+        return 1;
 	else
-		return 0;
+        return 0;
 }
 ```
 
