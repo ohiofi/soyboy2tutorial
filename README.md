@@ -132,12 +132,12 @@ else
 ```c#
 public bool IsWallToLeftOrRight()
 {
-	bool wallOnLeft = Physics2D.Raycast (new Vector2 (transform.position.x - width, transform.position.y), -Vector2.right, rayCastLengthCheck);
-	bool wallOnRight = Physics2D.Raycast (new Vector2 (transform.position.x + width, transform.position.y), Vector2.right, rayCastLengthCheck);
-	if (wallOnLeft || wallOnRight)
-		return true;
-	else
-		return false;
+    bool wallOnLeft = Physics2D.Raycast (new Vector2 (transform.position.x - width, transform.position.y), -Vector2.right, rayCastLengthCheck);
+    bool wallOnRight = Physics2D.Raycast (new Vector2 (transform.position.x + width, transform.position.y), Vector2.right, rayCastLengthCheck);
+    if (wallOnLeft || wallOnRight)
+        return true;
+    else
+        return false;
 }
 ```
 
@@ -183,13 +183,13 @@ rb.velocity = new Vector2(xVelocity, yVelocity);
 ```c#
 public int GetWallDirection()
 {
-	bool isWallLeft = Physics2D.Raycast (new Vector2 (transform.position.x - width, transform.position.y), -Vector2.right, rayCastLengthCheck);
-	bool isWallRight = Physics2D.Raycast (new Vector2 (transform.position.x + width, transform.position.y), Vector2.right, rayCastLengthCheck);
-	if (isWallLeft)
-		return -1;
-	else if(isWallRight)
+    bool isWallLeft = Physics2D.Raycast (new Vector2 (transform.position.x - width, transform.position.y), -Vector2.right, rayCastLengthCheck);
+    bool isWallRight = Physics2D.Raycast (new Vector2 (transform.position.x + width, transform.position.y), Vector2.right, rayCastLengthCheck);
+    if (isWallLeft)
+        return -1;
+    else if(isWallRight)
         return 1;
-	else
+    else
         return 0;
 }
 ```
