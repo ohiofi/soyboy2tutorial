@@ -181,15 +181,16 @@ rb.velocity = new Vector2(xVelocity, yVelocity);
 6. At this point, your character can jump up on walls, but he will just move straight up next to them when jumping. This definitely doesn&#39;t look right. The right way would be to propel him away from the walls in the opposite direction when jumping. Just below the **PlayerIsTouchingGroundOrWall()** method, add another new method:
 
 ```c#
-public int GetWallDirection(){
-   bool isWallLeft = Physics2D.Raycast (new Vector2 (transform.position.x - width, transform.position.y), -Vector2.right, rayCastLengthCheck);
-   bool isWallRight = Physics2D.Raycast (new Vector2 (transform.position.x + width, transform.position.y), Vector2.right, rayCastLengthCheck);
-   if (isWallLeft)
-      return -1;
-   else if(isWallRight)
-      return 1;
-   else
-	   return 0;
+public int GetWallDirection()
+{
+	bool isWallLeft = Physics2D.Raycast (new Vector2 (transform.position.x - width, transform.position.y), -Vector2.right, rayCastLengthCheck);
+	bool isWallRight = Physics2D.Raycast (new Vector2 (transform.position.x + width, transform.position.y), Vector2.right, rayCastLengthCheck);
+	if (isWallLeft)
+		return -1;
+	else if(isWallRight)
+		return 1;
+	else
+		return 0;
 }
 ```
 
