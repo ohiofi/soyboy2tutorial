@@ -242,6 +242,7 @@ The character controller is now complete in regard to input, so now we will focu
 | IsJumping = true | Speed Less 0.05 | IsJumping = true | IsJumping = false |
 | Speed Less 0.5 | IsJumping = false |   | Speed Greater 0 |
 |   | IsOnWall = false |   |   |
+|   |   |   |   |
 | **Run**  **-->**  **Slide** | **Slide**  **-->**  **Run** | **Slide**  **-->**  **Jump** | **Jump**  **-->**  **Slide** |
 | IsOnWall = true | IsOnWall = false | IsJumping = true | IsOnWall = true |
 |   | Speed Greater 0 | IsOnWall = false | IsJumping = false |
