@@ -262,12 +262,12 @@ animator.SetFloat("Speed", Mathf.Abs(input.x));
 ```c#
 if(input.y >= 1f)
 {
-	jumpDuration += Time.deltaTime;
+    jumpDuration += Time.deltaTime;
 }
 else
 {
-	isJumping = false;
-	jumpDuration = 0f;
+    isJumping = false;
+    jumpDuration = 0f;
 }
 ```
 
@@ -276,23 +276,23 @@ to be the following:
 ```c#
 if(input.y >= 1f)
 {
-	jumpDuration += Time.deltaTime;
-	animator.SetBool("IsJumping", true);
+    jumpDuration += Time.deltaTime;
+    animator.SetBool("IsJumping", true);
 }
 else
 {
-	isJumping = false;
-	animator.SetBool("IsJumping", false);
-	jumpDuration = 0f;
+    isJumping = false;
+    animator.SetBool("IsJumping", false);
+    jumpDuration = 0f;
 }
 ```
 
 12. In the **Update()** method once more, just after the closing brace in the code that says:
 
- ```c#
- if (input.y > 0f)
- 	isJumping = true;
- ```
+```c#
+if (input.y > 0f)
+    isJumping = true;
+```
 
 add the following:
 
@@ -305,7 +305,7 @@ animator.SetBool("IsOnWall", false);
 ```c#
 if(IsWallToLeftOrRight() && !PlayerIsOnGround() && input.y == 1)
 {
-   rb.velocity = new Vector2(-GetWallDirection() * speed * 0.75f, rb.velocity.y);
+    rb.velocity = new Vector2(-GetWallDirection() * speed * 0.75f, rb.velocity.y);
 }
 ```
 
@@ -314,21 +314,19 @@ with this:
 ```c#
 if(IsWallToLeftOrRight() && !PlayerIsOnGround() && input.y == 1)
 {
-   rb.velocity = new Vector2(-GetWallDirection() * speed * 0.75f, rb.velocity.y);
-   animator.SetBool("IsOnWall", false);
-   animator.SetBool("IsJumping", true);
+    rb.velocity = new Vector2(-GetWallDirection() * speed * 0.75f, rb.velocity.y);
+    animator.SetBool("IsOnWall", false);
+    animator.SetBool("IsJumping", true);
 }
 else if(!IsWallToLeftOrRight())
 {
-   animator.SetBool("IsOnWall", false);
-   animator.SetBool("IsJumping", true);
+    animator.SetBool("IsOnWall", false);
+    animator.SetBool("IsJumping", true);
 }
 if(IsWallToLeftOrRight() && !PlayerIsOnGround())
 {
-   animator.SetBool("IsOnWall", true);
+    animator.SetBool("IsOnWall", true);
 }
 ```
 
 14. Save your changes and run the game, and try out some basic controls. Soy Boy should transition between all the different states, including sliding down the wall when you&#39;re up against a wall and falling.
-
-
